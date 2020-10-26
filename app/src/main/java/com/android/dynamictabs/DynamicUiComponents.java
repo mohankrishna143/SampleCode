@@ -262,7 +262,7 @@ public class DynamicUiComponents {
         emailTextInputLayout.setId(R.id.et_input_count);
         emailTextInputLayout.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_OUTLINE);
         emailTextInputLayout.setBoxCornerRadii(5, 5, 5, 5);
-        emailTextInputLayout.setHint("Drop down Suggestions");
+        emailTextInputLayout.setHint(activity.getString(R.string.drop_suggestion));
         emailTextInputLayout.setLayoutParams(ll_params);
         AutoCompleteTextView textView = new AutoCompleteTextView(activity);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -341,31 +341,31 @@ public class DynamicUiComponents {
         linearLayout.setLayoutParams(linearParams);
 
 
+        TextView tv = new TextView(activity);
+        LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(layout);
+        tv.setTextSize(20.0f);
+        tv.setTextColor(ctx.getResources().getColor(R.color.colorPrimary));
+        tv.setText(R.string.material_card);
+        linearLayout.addView(tv);
+        
+
         for (int i = 0; i < 3; i++) {
-            MaterialCardView cardView = new MaterialCardView(activity);
+            MaterialCardView cardView = new MaterialCardView(activity,null,R.style.TopCornerCardview);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500);
             params.setMargins(20, 20, 20, 20);
             cardView.setLayoutParams(params);
-            cardView.setBackgroundColor(ctx.getResources().getColor(R.color.colorPrimary));
+            cardView.setBackgroundColor(ctx.getResources().getColor(R.color.grey));
             LinearLayout linear = new LinearLayout(activity);
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 400);
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             linear.setOrientation(LinearLayout.VERTICAL);
             linear.setLayoutParams(param);
             ImageView image = new ImageView(activity);
-            image.setBackgroundResource(R.mipmap.ic_launcher);
-            image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            image.setBackgroundResource(R.drawable.android);
+            image.setScaleType(ImageView.ScaleType.FIT_XY);
+            image.setLayoutParams(param);
             linear.addView(image);
-            LinearLayout linear_1 = new LinearLayout(activity);
-            linear_1.setLayoutParams(layoutParams);
 
-            TextView tv = new TextView(activity);
-            LinearLayout.LayoutParams layout = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            tv.setLayoutParams(layout);
-            tv.setTextSize(20.0f);
-            tv.setText("header 1");
-
-            linear_1.addView(tv);
-            linear.addView(linear_1);
             cardView.addView(linear);
             linearLayout.addView(cardView);
 

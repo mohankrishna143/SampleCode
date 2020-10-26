@@ -5,4 +5,6 @@
     <string name="hint_address">Enter Address</string>
     <string name="username">UserName</string>
     <string name="pwd">Enter Password</string>
+    <string name="material_card">Material CardView</string>
+    <string name="drop_suggestion">Drop down Suggestions</string>
 </resources>
