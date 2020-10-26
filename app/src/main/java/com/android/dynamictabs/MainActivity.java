@@ -62,26 +62,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(mDynamicFragmentAdapter);
         viewPager.setCurrentItem(0);
 
-       /* LinearLayout tabStrip = ((LinearLayout)mTabLayout.getChildAt(0));
-        for(int i = 0; i < tabStrip.getChildCount(); i++) {
-            tabStrip.getChildAt(i).setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    return true;
-                }
-            });
-        }
-
-        viewPager.setOnTouchListener(new View.OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                return true;
-            }
-        });*/
-
-    }
+     }
 
     /*
      * Updating Tabs
